@@ -1,0 +1,52 @@
+.repo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0px 4px 7px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 4px 7px 2px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    &__header {
+        margin-right: 20px;
+        font-weight: 500;
+    }
+
+    &__header-name,
+    &__last-commit {
+        width: 400px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 950px) {
+    .repo {
+        display: block;
+
+        &__header {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__header-name,
+        &__last-commit {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .repo {
+        padding: 25px 15px;
+        border-radius: 0.5rem;
+    }
+}
