@@ -17,13 +17,23 @@
     }
 
     &__header {
-        margin-right: 20px;
-        font-weight: 500;
+        &-name {
+            font-weight: bolder;
+        }
+
+        &-description {
+            line-height: 1.5rem;
+        }
+    }
+
+    &__header,
+    &__other {
+        width: 47%;
     }
 
     &__header-name,
+    &__stars,
     &__last-commit {
-        width: 400px;
         padding-bottom: 5px;
     }
 }
@@ -33,12 +43,11 @@
         display: block;
 
         &__header {
-            margin-right: 0;
             margin-bottom: 20px;
         }
 
-        &__header-name,
-        &__last-commit {
+        &__header,
+        &__other {
             width: 100%;
         }
     }
@@ -46,7 +55,12 @@
 
 @media (max-width: 500px) {
     .repo {
-        padding: 25px 15px;
+        margin-bottom: 15px;
+        padding: 15px 10px;
         border-radius: 0.5rem;
+
+        &__header {
+            margin-bottom: 10px;
+        }
     }
 }
