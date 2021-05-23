@@ -18,6 +18,7 @@
         border-top-right-radius: 0.4rem;
         border-bottom-right-radius: 0.4rem;
         border-left: none;
+        outline: none;
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
 
@@ -51,12 +52,18 @@
 }
 
 .pages {
-    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 20px auto;
 
     .page,
     .current-page {
-        margin: 0 10px;
-        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
         border: 1px solid #c0a793;
         border-radius: 100%;
         cursor: pointer;
@@ -71,5 +78,13 @@
 @media (max-width: 500px) {
     .search {
         margin: 10px 0 15px;
+    }
+
+    .pages {
+        .page,
+        .current-page {
+            width: 23px;
+            height: 23px;
+        }
     }
 }

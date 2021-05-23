@@ -29,6 +29,9 @@ const Main = () => {
 
     return (
         <div>
+            <h1>ReactJS Github Statistics</h1>
+            <a className="link" href="https://tsybulska.github.io/" target="_blank" rel="nofollow noopener">Developed by Olena Tsybulska</a>
+            
             <div className='search'>
                 <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type='text' placeholder='Input name' className='search__input' />
                 <button onClick={() => searchHandler()} className='search__btn'>Search</button>

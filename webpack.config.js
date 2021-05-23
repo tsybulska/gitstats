@@ -12,6 +12,8 @@ module.exports = {
     },
     devServer: {
         port: 3000,
+        historyApiFallback: true,
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.jsx'],
