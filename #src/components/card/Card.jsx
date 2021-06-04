@@ -15,7 +15,7 @@ const Card = (props) => {
 
     return (
         <div>
-            <button onClick={() => props.history.goBack()} className='back-btn'>Back</button>
+            <button onClick={() => props.history.goBack()}>Back</button>
 
             <div className='card'>
                 <div className='card__main'>

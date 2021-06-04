@@ -5,6 +5,7 @@ import { getRepos } from '../actions/repos'
 import Repo from './repo/Repo'
 import { setCurrentPage } from '../../reducers/reposReducer'
 import { createPages } from '../../utils/pagesCreator'
+import { Redirect } from 'react-router';
 
 const Main = () => {
     const dispatch = useDispatch()
@@ -13,6 +14,7 @@ const Main = () => {
     const currentPage = useSelector(state => state.repos.currentPage)
     const totalCount = useSelector(state => state.repos.totalCount)
     const perPage = useSelector(state => state.repos.perPage)
+    const isFetchError = useSelector(state => state.repos.isFetchError)
     const [searchValue, setSearchValue] = useState('')
     const pagesCount = Math.ceil(totalCount / perPage)
     const pages = []
@@ -23,18 +25,22 @@ const Main = () => {
     }, [currentPage])
 
     function searchHandler() {
-        dispatch(currentPage(1))
+        dispatch(setCurrentPage(1))
         dispatch(getRepos(searchValue, currentPage, perPage))
     }
 
     return (
         <div>
+            {
+                isFetchError && alert('ERROR. PLEASE RELOAD THIS PAGE')
+            }
+
             <h1>ReactJS Github Statistics</h1>
-            <a className="link" href="https://tsybulska.github.io/" target="_blank" rel="nofollow noopener">Developed by Olena Tsybulska</a>
+            <a className='link' href='https://tsybulska.github.io/' target='_blank' rel='nofollow noopener'>Developed by Olena Tsybulska</a>
             
             <div className='search'>
                 <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type='text' placeholder='Input name' className='search__input' />
-                <button onClick={() => searchHandler()} className='search__btn'>Search</button>
+                <button onClick={() => searchHandler()} style={{borderLeft: 'none', borderTopLeftRadius: '0', borderBottomLeftRadius: '0'}}>Search</button>
             </div>
 
             {
